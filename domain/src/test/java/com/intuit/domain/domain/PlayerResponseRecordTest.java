@@ -63,28 +63,18 @@ public class PlayerResponseRecordTest {
     }
 
     @Test
-    public void constructor_nullBirthCountry_emptyBirthAddress() {
+    public void constructor_emptyBirthCountry_emptyBirthAddress() {
         PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, null, "CA", "Orange", 3000, 1, 1, "USA", "CA", "Orange",
+                new PlayerDetails("a1", 1980, 1, 1, "", "CA", "Orange", 3000, 1, 1, "USA", "CA", "Orange",
                         "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
         PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
         assertEquals("", record.getBirthAddress());
     }
 
     @Test
-    public void constructor_nullBirthState_emptyBirthAddress() {
+    public void constructor_emptyBirthState_emptyBirthAddress() {
         PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, "USA", null, "Orange", 3000, 1, 1, "USA", "CA", "Orange",
-                        "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
-        PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
-        assertEquals("", record.getBirthAddress());
-    }
-
-
-    @Test
-    public void constructor_nullBirthCity_emptyBirthAddress() {
-        PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", null, 3000, 1, 1, "USA", "CA", "Orange",
+                new PlayerDetails("a1", 1980, 1, 1, "USA", "", "Orange", 3000, 1, 1, "USA", "CA", "Orange",
                         "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
         PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
         assertEquals("", record.getBirthAddress());
@@ -92,27 +82,37 @@ public class PlayerResponseRecordTest {
 
 
     @Test
-    public void constructor_nullDeathCountry_emptyDeathAddress() {
+    public void constructor_emptyBirthCity_emptyBirthAddress() {
         PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, null, "CA", "Orange",
+                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "", 3000, 1, 1, "USA", "CA", "Orange",
+                        "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
+        PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
+        assertEquals("", record.getBirthAddress());
+    }
+
+
+    @Test
+    public void constructor_emptyDeathCountry_emptyDeathAddress() {
+        PlayerDetails playerDetails =
+                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, "", "CA", "Orange",
                         "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
         PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
         assertEquals("", record.getDeathAddress());
     }
 
     @Test
-    public void constructor_nullDeathState_emptyDeathAddress() {
+    public void constructor_emptyDeathState_emptyDeathAddress() {
         PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, "USA", null, "Orange",
+                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, "USA", "", "Orange",
                         "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
         PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
         assertEquals("", record.getDeathAddress());
     }
 
     @Test
-    public void constructor_nullDeathCity_emptyDeathAddress() {
+    public void constructor_emptyDeathCity_emptyDeathAddress() {
         PlayerDetails playerDetails =
-                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, "USA", "CA", null,
+                new PlayerDetails("a1", 1980, 1, 1, "USA", "CA", "Orange", 3000, 1, 1, "USA", "CA", "",
                         "Michael", "Scott", "#1 Boss", 80, 170, 'R', 'R', "2000-01-01", "2000-01-01", "a2", "a3");
         PlayerResponseRecord record = new PlayerResponseRecord(playerDetails);
         assertEquals("", record.getDeathAddress());
