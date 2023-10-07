@@ -3,7 +3,6 @@ package com.intuit.project.web;
 import com.intuit.domain.domain.PlayerDetails;
 import com.intuit.domain.domain.PlayerResponseRecord;
 import com.intuit.project.service.ReadPlayerService;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
